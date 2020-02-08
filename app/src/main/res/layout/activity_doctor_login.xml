@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".doctor.DoctorLogin">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/doc_login_logo"
+        android:src="@drawable/logo"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        />
+    <RelativeLayout
+        android:layout_margin="11dp"
+        android:background="@drawable/border_white"
+        android:layout_below="@id/doc_login_logo"
+        android:id="@+id/doc_inner_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/doc_login_label_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_email"
+            android:padding="3dp"
+            android:background="@drawable/btn_login_bg"
+            android:textColorHint="@android:color/holo_blue_dark"
+            >
+
+            <EditText
+                android:drawableEnd="@android:drawable/ic_dialog_email"
+                android:id="@+id/doc_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:padding="10dp"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/doc_login_label_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_password"
+            android:background="@drawable/btn_login_bg"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/doc_login_label_email"
+            android:padding="3dp"
+            android:textColorHint="@android:color/holo_blue_dark"
+            >
+
+            <EditText
+                android:drawableEnd="@android:drawable/ic_lock_idle_lock"
+                android:id="@+id/doc_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:padding="10dp"
+                android:inputType="textPassword"
+                android:imeOptions="actionDone"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:id="@+id/doc_login_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_below="@id/doc_inner_lay"
+
+        />
+    <Button
+        android:padding="5dp"
+        android:id="@+id/doc_login_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Doctor Login"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:background="@drawable/border_white"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/doc_login_error"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        />
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/doc_login_submit"
+        android:id="@+id/doc_btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:text="@string/btn_back"
+        android:textColor="@android:color/black" />
+</RelativeLayout>

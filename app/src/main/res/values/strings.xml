@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Medical Chatbot</string>
+
+    <string-array name="gender">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="sec_question">
+        <item>Select a Security Question</item>
+        <item>What is your mother\'s maiden name?</item>
+        <item>What is your favourite food?</item>
+        <item>What city were you born in?</item>
+        <item>What is the name of the road you grew up on?</item>
+    </string-array>
+    <string name="password_recovery">Recover your password</string>
+    <string name="hint_email">Email</string>
+    <string name="btn_reset_password">Reset Password</string>
+    <string name="forgot_password_msg">Put your registered Email Address to receive password reset instructions.</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="text_full_name">Full Name</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_phone_number">Phone Number</string>
+    <string name="hint_age">Age</string>
+    <string name="hint_answer">Answer</string>
+    <string name="text_register">Register</string>
+    <string name="text_have_account">Already Registered? Click here</string>
+    <string name="text_login">User Login</string>
+    <string name="text_forgot_password">Forgot Password? Click here</string>
+    <string name="text_no_account">Not Yet Registered? Click here</string>
+</resources>

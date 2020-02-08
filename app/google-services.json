@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "507069260224",
+    "firebase_url": "https://medicalchatbot-43349.firebaseio.com",
+    "project_id": "medicalchatbot-43349",
+    "storage_bucket": "medicalchatbot-43349.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507069260224:android:1e2957ea05c67f64d96825",
+        "android_client_info": {
+          "package_name": "com.adaeze.medicalchatbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507069260224-oh99ebdb5ctt74vhehm5ft7l5vvlkk17.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adaeze.medicalchatbot",
+            "certificate_hash": "4bfb6d8ae367e89beec65950408a21d265181621"
+          }
+        },
+        {
+          "client_id": "507069260224-8be4oc4kg5gs8bn7tfno091rkqiv1n45.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB4ZWGsuujxUIDsftdYKlVsslrftDaHoY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507069260224-8be4oc4kg5gs8bn7tfno091rkqiv1n45.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
