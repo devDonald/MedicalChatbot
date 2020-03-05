@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,25 +9,21 @@
     tools:context=".doctor.DoctorMenu">
 
     <TextView
+        android:layout_alignParentTop="true"
         android:id="@+id/doc_welcome_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:textAlignment="center"
         />
-    <TextView
-        android:id="@+id/welcome_text1"
+    <fragment
+        android:layout_below="@+id/doc_welcome_text"
+        android:name="com.adaeze.medicalchatbot.user.ui.chat_history.ChatHistoryFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorWhite"
-        android:textSize="18sp"
-        android:padding="5dp"
-        android:text="Sorry, no meeting has been Scheduled for you yet"
-        android:textStyle="bold"
-        android:textAlignment="center"
+        android:id="@+id/doc_appointments"
         />
-</LinearLayout>
+</RelativeLayout>

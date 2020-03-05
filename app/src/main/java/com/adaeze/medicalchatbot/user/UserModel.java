@@ -3,6 +3,7 @@ package com.adaeze.medicalchatbot.user;
 public class UserModel {
 
     private String name, email, phone, age, gender, securityQuestion, securityAnswer, uid, photoUrl;
+    private String availability, position, location, presence;
 
     public UserModel() {
     }
@@ -88,5 +89,37 @@ public class UserModel {
 
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
+    }
+
+    public String getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(String availability) {
+        this.availability = availability;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getPresence() {
+        return presence;
+    }
+
+    public void setPresence(String presence) {
+        this.presence = presence;
     }
 }

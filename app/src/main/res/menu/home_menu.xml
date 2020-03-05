@@ -12,9 +12,4 @@
         android:title="My Profile"
         app:showAsAction="never"
         />
-    <item
-        android:id="@+id/action_share"
-        android:title="Share App"
-        app:showAsAction="never"
-        />
 </menu>

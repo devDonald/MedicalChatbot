@@ -1,0 +1,84 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".doctor.DoctorProfile">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="20dp"
+            android:id="@+id/dprofile_image"
+            android:layout_centerHorizontal="true"
+            android:layout_width="310dp"
+            android:layout_height="220dp"
+            android:src="@drawable/ic_person"
+            />
+
+        <ImageView
+            android:id="@+id/d_change_profile_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/dprofile_image"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-61dp"
+            android:layout_marginEnd="70dp"
+            android:src="@drawable/ic_person_add" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="20dp"
+            android:background="@android:color/white"
+            android:layout_below="@id/dprofile_image"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/square"
+                    android:id="@+id/dp_name"
+                    android:textColor="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:drawableEnd="@drawable/ic_edit"
+                    android:background="@drawable/square"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/dp_name"
+                    android:id="@+id/dp_availability"
+                    android:textColor="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:padding="5dp"/>
+                <TextView
+                    android:background="@drawable/square"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/dp_availability"
+                    android:id="@+id/dp_location"
+                    android:textColor="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:padding="5dp"
+                    android:drawableEnd="@drawable/ic_edit"
+                    android:layout_marginBottom="5dp"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

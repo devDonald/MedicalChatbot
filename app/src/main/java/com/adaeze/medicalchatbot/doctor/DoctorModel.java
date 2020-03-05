@@ -1,10 +1,19 @@
 package com.adaeze.medicalchatbot.doctor;
 
 public class DoctorModel {
-    private String name, available, position, location, presence, uid;
+    private String name, availability, position, location, presence, uid, photoUrl, email;
 
     public DoctorModel() {
 
+    }
+
+    public DoctorModel(String name, String availability, String position, String location, String presence, String uid) {
+        this.name = name;
+        this.availability = availability;
+        this.position = position;
+        this.location = location;
+        this.presence = presence;
+        this.uid = uid;
     }
 
     public String getName() {
@@ -15,12 +24,12 @@ public class DoctorModel {
         this.name = name;
     }
 
-    public String getAvailable() {
-        return available;
+    public String getAvailability() {
+        return availability;
     }
 
-    public void setAvailable(String available) {
-        this.available = available;
+    public void setAvailability(String availability) {
+        this.availability = availability;
     }
 
     public String getPosition() {
@@ -53,5 +62,21 @@ public class DoctorModel {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

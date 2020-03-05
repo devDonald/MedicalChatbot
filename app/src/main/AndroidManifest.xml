@@ -3,7 +3,7 @@
     package="com.adaeze.medicalchatbot">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".user.MyProfile"></activity>
+        <activity android:name=".doctor.AppointmentChat"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="Request Appointment"></activity>
+        <activity
+            android:name=".user.HomePage"
+            android:label="Medcare Home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".doctor.DoctorProfile" />
+        <activity android:name=".user.Meeting" />
+        <activity
+            android:name=".chatbot.Chatbot"
+            android:label="Medcare" />
+        <activity
+            android:name=".user.MyProfile"
+            android:label="My Profile" />
         <activity android:name=".LoginMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,15 +34,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".doctor.DoctorMenu" />
-        <activity android:name=".doctor.DoctorLogin" />
+        <activity
+            android:name=".doctor.DoctorMenu"
+            android:label="Doctor Menu" />
+        <activity
+            android:name=".doctor.DoctorLogin"
+            android:label="Secured User Login" />
         <activity
             android:name=".ResetPassword"
             android:label="Password Reset" />
         <activity
             android:name=".user.Register"
             android:label="User Registration" />
-        <activity android:name=".user.UserLogin"></activity>
+        <activity
+            android:name=".user.UserLogin"
+            android:label="Secured Login" />
         <activity android:name=".MainActivity" />
     </application>
 

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:background="#2955D8"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/bottom_line2"
+        android:id="@+id/lay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Developer's Name:"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:textColor="@color/white"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mrs JONGLAPSON LYDIA ADAEZE"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/bottom_line2"
+        android:id="@+id/lay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/lay1"
+        app:layout_constraintEnd_toEndOf="@id/lay1"
+        app:layout_constraintTop_toBottomOf="@id/lay1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Developer's Email:"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:textColor="@color/white"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="medcarebot@gmail.com"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/bottom_line2"
+        android:id="@+id/lay3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/lay2"
+        app:layout_constraintEnd_toEndOf="@id/lay2"
+        app:layout_constraintTop_toBottomOf="@id/lay2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personal Website:"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="http://www.medcare.dcn.com.ng"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/bottom_line2"
+        android:id="@+id/lay4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/lay3"
+        app:layout_constraintEnd_toEndOf="@id/lay3"
+        app:layout_constraintTop_toBottomOf="@id/lay3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Number"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:textColor="@color/white"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+2347035320847"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/bottom_line2"
+        android:id="@+id/lay5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/lay4"
+        app:layout_constraintEnd_toEndOf="@id/lay4"
+        app:layout_constraintTop_toBottomOf="@id/lay4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Locations:"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:textColor="@color/white"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Internet"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/bottom_line2"
+        android:id="@+id/lay6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/lay5"
+        app:layout_constraintEnd_toEndOf="@id/lay5"
+        app:layout_constraintTop_toBottomOf="@id/lay5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Internet"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

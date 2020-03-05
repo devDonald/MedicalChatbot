@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.adaeze.medicalchatbot.user.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.adaeze.medicalchatbot.user.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_services"
+        android:name="com.adaeze.medicalchatbot.user.ui.services.ServicesFragment"
+        android:label="@string/menu_services"
+        tools:layout="@layout/fragment_services" />
+
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="com.adaeze.medicalchatbot.user.ui.contact.ContactFragment"
+        android:label="@string/menu_contact"
+        tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/nav_chat_history"
+        android:name="com.adaeze.medicalchatbot.user.ui.chat_history.ChatHistoryFragment"
+        android:label="@string/menu_chat_history"
+        tools:layout="@layout/fragment_chat_history" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_contact"-->
+<!--        android:name="com.adaeze.medicalchatbot.user.ui.send.SendFragment"-->
+<!--        android:label="@string/menu_send"-->
+<!--        tools:layout="@layout/fragment_chat_history" />-->
+</navigation>

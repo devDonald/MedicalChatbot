@@ -9,8 +9,11 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.adaeze.medicalchatbot.chatbot.Chatbot;
 import com.adaeze.medicalchatbot.doctor.DoctorModel;
 import com.adaeze.medicalchatbot.user.MyProfile;
 import com.adaeze.medicalchatbot.user.UserLogin;
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser cUsers;
     private String uid,email,names,phone,age;
     private TextView tv_welcome;
+    private Button chat, meetDoctor;
 
 
     @Override
@@ -43,54 +47,68 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv_welcome = findViewById(R.id.welcome_text);
-
-        try {
-            mAuth=FirebaseAuth.getInstance();
-            cUsers = mAuth.getCurrentUser();
-            uid = cUsers.getUid();
-            email=cUsers.getEmail();
-
-            mUsers = FirebaseDatabase.getInstance().getReference().child("Users");
-
-            mUsers.child(uid
-            ).addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    DoctorModel profileModel = dataSnapshot.getValue(DoctorModel.class);
-                    names = profileModel.getName();
-
-                    tv_welcome.setText("Hello, "+names);
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
-        handler = new Handler();
-        r = new Runnable() {
-
-            @Override
-            public void run() {
-
-                Intent intent = new Intent(getApplicationContext(), LoginMenu.class);
-                startActivity(intent);
-                Log.d(TAG, "Logged out after 3 minutes on inactivity.");
-                finish();
-
-                MDToast.makeText(MainActivity.this, "Logged out after 3 minutes on inactivity.",MDToast.LENGTH_LONG,MDToast.TYPE_SUCCESS).show();
-            }
-        };
-
-        startHandler();
+//        tv_welcome = findViewById(R.id.welcome_text);
+//        chat = findViewById(R.id.bot_care);
+//
+//
+//
+//        try {
+//            mAuth=FirebaseAuth.getInstance();
+//            cUsers = mAuth.getCurrentUser();
+//            uid = cUsers.getUid();
+//            email=cUsers.getEmail();
+//
+//            mUsers = FirebaseDatabase.getInstance().getReference().child("Users");
+//
+//            mUsers.child(uid).addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                    UserModel profileModel = dataSnapshot.getValue(UserModel.class);
+//                    names = profileModel.getName();
+//                    phone =profileModel.getPhone();
+//                    age =profileModel.getAge();
+//
+//                    tv_welcome.setText("Hello, "+names);
+//
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                }
+//            });
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//
+//
+//        handler = new Handler();
+//        r = new Runnable() {
+//
+//            @Override
+//            public void run() {
+//
+//                Intent intent = new Intent(getApplicationContext(), LoginMenu.class);
+//                startActivity(intent);
+//                Log.d(TAG, "Logged out after 3 minutes on inactivity.");
+//                finish();
+//
+//                MDToast.makeText(MainActivity.this, "Logged out after 3 minutes on inactivity.",MDToast.LENGTH_LONG,MDToast.TYPE_SUCCESS).show();
+//            }
+//        };
+//
+//        startHandler();
+//
+//        chat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent medchat = new Intent(getApplicationContext(), Chatbot.class);
+//                medchat.putExtra("names",names);
+//
+//                startActivity(medchat);
+//            }
+//        });
     }
 
     @Override
@@ -125,9 +143,6 @@ public class MainActivity extends AppCompatActivity {
             my_profile.putExtra("email",email);
             my_profile.putExtra("phone",phone);
             startActivity(my_profile);
-        } else if(id==R.id.action_share){
-
-
         }
 
         return super.onOptionsItemSelected(item);

@@ -1,6 +1,7 @@
 package com.adaeze.medicalchatbot.doctor;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,18 +18,23 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.kaopiz.kprogresshud.KProgressHUD;
 import com.valdesekamdem.library.mdtoast.MDToast;
 
 public class DoctorLogin extends AppCompatActivity {
     private TextView lost_password, tv_error;
     private FirebaseAuth mAuth;
-    private DatabaseReference mUsers;
+    private DatabaseReference mDoctors;
     private KProgressHUD hud;
     private Button submit,btnBack;
     private EditText etEmail, etPassword;
-    private String email, password;
+    private String email, password, position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +69,7 @@ public class DoctorLogin extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+        mDoctors = FirebaseDatabase.getInstance().getReference().child("Doctors");
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,12 +98,43 @@ public class DoctorLogin extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     hud.dismiss();
                                     if (task.isSuccessful()){
-                                        MDToast.makeText(getApplicationContext(),"Doctor Authentication Successful",
-                                                MDToast.LENGTH_LONG,MDToast.TYPE_SUCCESS).show();
-                                        Intent toReg = new Intent(DoctorLogin.this, DoctorMenu.class);
-                                        toReg.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                        startActivity(toReg);
-                                        finish();
+                                        String uid = mAuth.getUid();
+
+                                        mDoctors.child(uid).addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                try {
+                                                    DoctorModel model = dataSnapshot.getValue(DoctorModel.class);
+                                                    position = model.getPosition();
+                                                    if (position.matches("Doctor")){
+                                                        MDToast.makeText(getApplicationContext(),"Doctor Authentication Successful",
+                                                                MDToast.LENGTH_LONG,MDToast.TYPE_SUCCESS).show();
+                                                        Intent toReg = new Intent(DoctorLogin.this, DoctorMenu.class);
+                                                        toReg.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                        toReg.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                        toReg.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                        startActivity(toReg);
+                                                        finish();
+                                                    } else{
+                                                        mAuth.signOut();
+                                                        etEmail.setText("");
+                                                        etPassword.setText("");
+                                                        MDToast.makeText(getApplicationContext(),"Doctor Authentication Failed",
+                                                                MDToast.LENGTH_LONG,MDToast.TYPE_ERROR).show();
+                                                    }
+                                                } catch (Exception e){
+                                                    e.printStackTrace();
+                                                }
+
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+
                                     }
                                 }
                             });

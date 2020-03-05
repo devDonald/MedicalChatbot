@@ -93,6 +93,9 @@ public class UserLogin extends AppCompatActivity {
                                     hud.dismiss();
                                     if (task.isSuccessful()){
                                         checkIfEmailVerified();
+                                    } else {
+                                        MDToast.makeText(getApplicationContext(),"Authentication Failed, invalid email/password",
+                                                MDToast.LENGTH_LONG,MDToast.TYPE_ERROR).show();
                                     }
                                 }
                             });
@@ -111,8 +114,10 @@ public class UserLogin extends AppCompatActivity {
                // user is verified, so you can finish this activity or send user to activity which you want.
                MDToast.makeText(getApplicationContext(),"UserLogin Successful",
                        MDToast.LENGTH_LONG,MDToast.TYPE_SUCCESS).show();
-               Intent toReg = new Intent(UserLogin.this, MainActivity.class);
-               toReg.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               Intent toReg = new Intent(UserLogin.this, HomePage.class);
+               toReg.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+               toReg.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               toReg.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                startActivity(toReg);
                finish();
            }
@@ -120,7 +125,7 @@ public class UserLogin extends AppCompatActivity {
            {
                // email is not verified, so just prompt the message to the user and restart this activity.
                // NOTE: don't forget to log out the user.
-               MDToast.makeText(getApplicationContext(),"Authentication Failed",
+               MDToast.makeText(getApplicationContext(),"Authentication Failed, invalid email/password",
                        MDToast.LENGTH_LONG,MDToast.TYPE_ERROR).show();
                FirebaseAuth.getInstance().signOut();
 
