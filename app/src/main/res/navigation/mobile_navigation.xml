@@ -36,8 +36,8 @@
         tools:layout="@layout/fragment_chat_history" />
 
 <!--    <fragment-->
-<!--        android:id="@+id/nav_contact"-->
-<!--        android:name="com.adaeze.medicalchatbot.user.ui.send.SendFragment"-->
-<!--        android:label="@string/menu_send"-->
-<!--        tools:layout="@layout/fragment_chat_history" />-->
+<!--        android:id="@+id/nav_chatbot_history"-->
+<!--        android:name="com.adaeze.medicalchatbot.user.ui.bot.BotFragment"-->
+<!--        android:label="@string/menu_botchat_history"-->
+<!--        tools:layout="@layout/fragment_bot_history" />-->
 </navigation>

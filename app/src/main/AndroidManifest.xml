@@ -12,9 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".doctor.AppointmentChat"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="Request Appointment"></activity>
+        <activity android:name=".chatbot.Chat"></activity>
+        <activity android:name=".user.ui.chat_history.ChatPopUp2" />
+        <activity android:name=".user.ui.chat_history.ChatPopUp1" />
+        <activity android:name=".user.ui.chat_history.DoctorHistory" />
+        <activity android:name=".user.ui.chat_history.BotHistory" />
+        <activity
+            android:name=".doctor.AppointmentChat"
+            android:label="Request Appointment"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".user.HomePage"
             android:label="Medcare Home"

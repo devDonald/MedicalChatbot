@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.adaeze.medicalchatbot.LoginMenu;
 import com.adaeze.medicalchatbot.MainActivity;
 import com.adaeze.medicalchatbot.R;
-import com.adaeze.medicalchatbot.chatbot.Chatbot;
+import com.adaeze.medicalchatbot.chatbot.Chat;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -49,7 +49,7 @@ public class HomePage extends AppCompatActivity {
     private Handler handler;
     private Runnable r;
     private FirebaseUser cUsers;
-    private String uid,email,names,phone,age;
+    private String uid,email,names,phone,age, question, answer;
     private TextView tv_welcome;
     private Button chat, meetDoctor;
 
@@ -94,6 +94,8 @@ public class HomePage extends AppCompatActivity {
                     names = profileModel.getName();
                     phone =profileModel.getPhone();
                     age =profileModel.getAge();
+                    question = profileModel.getSecurityQuestion();
+                    answer = profileModel.getSecurityAnswer();
 
                    // tv_welcome.setText("Hello, "+names);
 
@@ -180,6 +182,8 @@ public class HomePage extends AppCompatActivity {
             my_profile.putExtra("names",names);
             my_profile.putExtra("email",email);
             my_profile.putExtra("phone",phone);
+            my_profile.putExtra("answer",answer);
+            my_profile.putExtra("question",question);
             startActivity(my_profile);
         }
 

@@ -25,7 +25,11 @@
             android:icon="@drawable/ic_chat"
             android:title="@string/menu_chat_history"
             />
-
+<!--        <item-->
+<!--            android:id="@+id/nav_botchat_history"-->
+<!--            android:icon="@drawable/ic_chat"-->
+<!--            android:title="@string/menu_botchat_history"-->
+<!--            />-->
     </group>
 
 

@@ -4,9 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <Button
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/bot_care_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/chat_recycler"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/border_white"
+        android:text="Chat with Medcare History"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
         />
+    <Button
+        android:layout_below="@id/bot_care_history"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/chat_with_doc_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_white"
+        android:text="Chat with Doctor History"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
 </RelativeLayout>

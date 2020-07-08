@@ -49,4 +49,7 @@
     <string name="service_desc">MedCare answers medical and health questions for consumers and doctors instantly. The answers are provided by an inttelligent Super-Computer that learns about medicine everyday and over time about your health record and medical history. The idea behind cognitive computing or artificial intelligence, is that our computer learns by doing, getting at its task better over time by crunching more medical information. That iterative process of ingesting more information is what makes MedCare Powerful in the medical field</string>
     <string name="service_availability_desc">MedCare is available 24/7 and accessable by any cell phone, from any Location in the world.</string>
     <string name="menu_chat_history">Chat History</string>
+    <string name="menu_botchat_history">Chat History with Chatbot</string>
+    <string name="text_chat_doc">Chat with Doctor</string>
+
 </resources>

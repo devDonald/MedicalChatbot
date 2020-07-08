@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.adaeze.medicalchatbot.chatbot.Chatbot;
+import com.adaeze.medicalchatbot.chatbot.Chat;
 import com.adaeze.medicalchatbot.doctor.DoctorModel;
 import com.adaeze.medicalchatbot.user.MyProfile;
 import com.adaeze.medicalchatbot.user.UserLogin;

@@ -1,14 +1,14 @@
-package com.adaeze.medicalchatbot.user.ui.share;
+package com.adaeze.medicalchatbot.user.ui.bot;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class BotViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public BotViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is share fragment");
     }

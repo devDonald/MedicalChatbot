@@ -36,8 +36,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MyProfile extends AppCompatActivity {
 
     private DatabaseReference mUsersDatabase,contactsRef;
-    private String user_id, user_age, user_name,user_email, user_phone;
-    private TextView mNames,mPhone,mAge,mEmail;
+    private String user_id, user_age, user_name,user_email, user_phone, user_question;
+    private TextView mNames,mPhone,mAge,mEmail, mQuestion;
     private CircleImageView mProfileImage;
     private ImageView change_profile;
     private FirebaseAuth mAuth;
@@ -55,6 +55,7 @@ public class MyProfile extends AppCompatActivity {
         mPhone = findViewById(R.id.mp_phone);
         mAge = findViewById(R.id.mp_age);
         mEmail = findViewById(R.id.mp_email);
+        mQuestion = findViewById(R.id.mp_sec_question);
         mProfileImage = findViewById(R.id.mprofile_image);
         change_profile = findViewById(R.id.m_change_profile_image);
 
@@ -75,6 +76,7 @@ public class MyProfile extends AppCompatActivity {
                 user_name = bundle.getString("names");
                 user_email = bundle.getString("email");
                 user_phone = bundle.getString("phone");
+                user_question = bundle.getString("question");
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -84,6 +86,7 @@ public class MyProfile extends AppCompatActivity {
         mAge.setText(user_age+" Years");
         mPhone.setText(user_phone);
         mEmail.setText(user_email);
+        mQuestion.setText(user_question);
         mUsersDatabase.child(user_id)
                 .addValueEventListener(new ValueEventListener() {
                     @Override

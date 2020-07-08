@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -18,8 +20,9 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.adaeze.medicalchatbot.LoginMenu;
 import com.adaeze.medicalchatbot.R;
-import com.adaeze.medicalchatbot.chatbot.Chatbot;
+import com.adaeze.medicalchatbot.chatbot.Chat;
 import com.adaeze.medicalchatbot.user.HomePage;
+import com.adaeze.medicalchatbot.user.Meeting;
 import com.adaeze.medicalchatbot.user.UserModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,6 +33,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kaopiz.kprogresshud.KProgressHUD;
 import com.valdesekamdem.library.mdtoast.MDToast;
+
+import io.kommunicate.KmConversationBuilder;
+import io.kommunicate.Kommunicate;
+import io.kommunicate.callbacks.KmCallback;
 
 
 public class HomeFragment extends Fragment {
@@ -45,12 +52,16 @@ public class HomeFragment extends Fragment {
     private Button chat, meetDoctor;
 
     private HomeViewModel homeViewModel;
+    private static final String APP_ID ="1064d7a7d2998a753815df0ba991dbbad";
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+        Kommunicate.init(getContext(), APP_ID);
+
 
         try {
             mAuth=FirebaseAuth.getInstance();
@@ -61,6 +72,7 @@ public class HomeFragment extends Fragment {
             mUsers = FirebaseDatabase.getInstance().getReference().child("Users");
 
             tv_welcome = root.findViewById(R.id.welcome_text);
+            meetDoctor = root.findViewById(R.id.chat_with_doc);
             chat = root.findViewById(R.id.bot_care);
             mUsers.child(uid).addValueEventListener(new ValueEventListener() {
                 @Override
@@ -103,10 +115,31 @@ public class HomeFragment extends Fragment {
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent medchat = new Intent(getContext(), Chatbot.class);
-                medchat.putExtra("names",names);
+                new KmConversationBuilder(getContext())
+                        .launchConversation(new KmCallback() {
+                            @Override
+                            public void onSuccess(Object message) {
+                                Log.d("Conversation", "Success : " + message);
+                            }
 
-                startActivity(medchat);
+                            @Override
+                            public void onFailure(Object error) {
+                                Log.d("Conversation", "Failure : " + error);
+                            }
+                        });
+//                Intent medchat = new Intent(getContext(), Chat.class);
+//                medchat.putExtra("names",names);
+//
+//                startActivity(medchat);
+            }
+        });
+
+        meetDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent medDoc = new Intent(getContext(), Meeting.class);
+                medDoc.putExtra("myName", names);
+                startActivity(medDoc);
             }
         });
 
@@ -150,4 +183,5 @@ public class HomeFragment extends Fragment {
         Log.d("onDestroy", "onDestroyActivity change");
 
     }
+
 }
